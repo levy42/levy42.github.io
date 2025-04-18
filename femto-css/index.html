@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Femto CSS Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/levy42/femto-css@refs/heads/main/femto.min.css">
+    <style>
+        #columns-demo {
+            [aria-colspan] {
+                background: color-mix(in hsl, CanvasText 3%, transparent);
+            }
+        }
+        section {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <b>Femto CSS</b>
+        <a href="#topography">Topography</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#inputs">Inputs</a>
+        <a href="#select">Select</a>
+        <a href="#blockqoute">Blockquote</a>
+        <a href="#table">Table</a>
+        <a href="#columns">Rows/Columns</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#dialog">Dialog</a>
+        <a href="#accordion">Accordion</a>
+    </nav>
+</header>
+<main>
+    <h2 id="topography">
+        Topography
+    </h2>
+    <section>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <p>Paragraph</p>
+        <small>small</small>
+        <big>Big</big>
+        <em>italic</em>
+        <b>bold</b>
+        <strong>strong</strong>
+        <br><br>
+        <div>
+            <mark>mark</mark>
+            <abbr>abbr</abbr>
+            <kbd>kbd</kbd>
+            <ins>insert</ins>
+            <del>delete</del>
+            <code>code</code>
+            <cite>Cite text</cite>
+        </div>
+        <p><a href=".">Link text</a></p>
+        <hr>
+    </section>
+    <h2 id="buttons">
+        Buttons
+    </h2>
+    <section>
+        <button>Button</button>
+        <button role="link">Role link</button>
+        <button type="reset">Reset Button</button>
+        <button style="color: var(--red)">Red Button</button>
+        <button style="color: var(--blue)">Blue Button</button>
+        <a role="button">Link Role button</a>
+    </section>
+    <section>
+        <button disabled>Disabled</button>
+        <button>＋ With unicode icon</button>
+    </section>
+    <h2 id="inputs">
+        Inputs
+    </h2>
+    <section>
+        <input placeholder="Input">
+        <input placeholder="Type number" value="Invalid" pattern="[0-9]+">
+        <input type="file">
+        <input type="checkbox" checked/>
+        <input type="password" placeholder="Password"/>
+        <br><br>
+    </section>
+    <section>
+        <textarea placeholder="Text Area"></textarea>
+    </section>
+    <h2 id="select">
+        Select
+    </h2>
+    <section>
+        <select>
+            <option>
+                One
+            </option>
+            <option>
+                Two
+            </option>
+            <option>
+                Three
+            </option>
+        </select>
+    </section>
+    <h2 id="blockqoute">
+        Blockqoute
+    </h2>
+    <section>
+        <blockquote>Some text. Bla bla bla.</blockquote>
+        <blockquote role="alert">Some text. Bla bla bla.</blockquote>
+        <blockquote style="color: var(--green)">Some text. Bla bla bla.</blockquote>
+    </section>
+    <h2 id="dialog">
+        Dialog
+    </h2>
+    <section>
+        <button popovertarget="demo-dialog">Open Dialog</button>
+        <dialog popover id="demo-dialog">
+            <header>Dialog</header>
+            dialog content
+            <footer>
+                <button autofocus popovertarget="demo-dialog" popovertargetaction="hide">Close</button>
+                <button type="submit">Submit</button>
+            </footer>
+        </dialog>
+    </section>
+    <h2 id="table">
+        Table
+    </h2>
+    <section>
+        <table>
+            <thead>
+            <tr>
+                <th>One</th>
+                <th>Two</th>
+                <th>Three</th>
+                <th>Four</th>
+                <th>Five</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>One</td>
+                <td>Two</td>
+                <td>Three</td>
+                <td>Four</td>
+                <td>Five</td>
+            </tr>
+            <tr>
+                <td>One</td>
+                <td>Two</td>
+                <td>Three</td>
+                <td>Four</td>
+                <td>Five</td>
+            </tr>
+            <tr>
+                <td>One</td>
+                <td>Two</td>
+                <td>Three</td>
+                <td>Four</td>
+                <td>Five</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <h2 id="columns">
+        Columns
+    </h2>
+    <p>Use <code>role="row"</code> for row, and <code>aria-colspan=[1-12]</code> for columns</p>
+    <section id="columns-demo">
+        <div role="row">
+            <div aria-colspan="4">Column 4</div>
+            <div aria-colspan="8">Column 8</div>
+        </div>
+        <div role="row">
+            <div aria-colspan="6">Column 6</div>
+            <div aria-colspan="6">Column 6</div>
+        </div>
+        <div role="row">
+            <div aria-colspan="3">Column 3</div>
+            <div aria-colspan="4">Column 4</div>
+            <div aria-colspan="5">Column 5</div>
+        </div>
+    </section>
+    <h2 id="tabs">
+        Tabs
+    </h2>
+    <section>
+        <nav role="tablist">
+            <a role="tab" id="tab1" href="#panel1">Tab 1</a>
+            <a role="tab" id="tab2" href="#panel2">Tab 2</a>
+            <a role="tab" id="tab3" href="#panel3">Tab 3</a>
+        </nav>
+        <section>
+            <div role="tabpanel" id="panel1">Content1</div>
+            <div role="tabpanel" id="panel2">Content2</div>
+            <div role="tabpanel" id="panel3">Content3</div>
+        </section>
+    </section>
+    <h2 id="accordion">
+        Accordion
+    </h2>
+    <section>
+        <details name="accordion1">
+            <summary>Item 1</summary>
+            Content 1
+        </details>
+        <details name="accordion1">
+            <summary>Item 2</summary>
+            Content 2
+        </details>
+        <details name="accordion1">
+            <summary>Item 3</summary>
+            Content 3
+        </details>
+    </section>
+    <h2 id="navbar">
+        Header navbar
+    </h2>
+    <p>Header navbar like on top of this demo. Click on picture to see dropdown menu.</p>
+</main>
+<footer>
+    femto-css, simple and small classless css framework @2025
+</footer>
+</body>
+</html>
